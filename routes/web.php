@@ -14,8 +14,5 @@ use App\Http\Controllers\MovieController;
 |
 */
 
-Route::get('/', function () {
 
-    $movies = config('movies');
-    return view('home', compact('movies'));
-})->name('home');
+Route::get('/', [MovieController::class, 'home'])->name('home');
